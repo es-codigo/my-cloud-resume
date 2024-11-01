@@ -1,0 +1,148 @@
+package views
+
+
+
+templ Resume() {
+    <head>
+    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        .header {
+            /* text-align: center;/ */
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .list-item {
+            margin-bottom: 1rem;
+        }
+
+        .list-item-info {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+// <div class="header">
+//     <h1>William Young</h1>
+//     <p hx-post="">Views: {strconv.Itoa(pageViews)}</p>
+//     <p>San Antonio, Texas, US | +1 (708) 739-9561 | will.young_@outlook.com</p>
+    
+//     <p><a href="https://www.github.com/es-codigo">github.com/es-codigo</a> | <a href="https://www.linkedin.com/in/will-young-sre">linkedin.com/in/will-young-sre</a> | johndoe.com</p>
+// </div>
+
+<div class="section">
+    <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+    <p>A professional summary stating your best-selling points based on the job description e.g. I am a Software Engineer with strong fundamentals in XXX looking to XXXX.</p>
+</div>
+
+<div class="section">
+    <h2 class="section-title">WORK EXPERIENCE</h2>
+    <div class="list-item">
+        <div class="list-item-info">
+            <h3>Engineer I, American Express</h3>
+            <h3>Sep 2019 - Current</h3>
+        </div>
+        <ul>
+            <li>State your achievements at your role in this format: "[Action verb] + what you did + reason, outcome or quantified results".</li>
+            <li>Talk about technologies used.</li>
+        </ul>
+    </div>
+    <div class="list-item">
+        <div class="list-item-info">
+            <h3>Software Engineer, Polco</h3>
+            <h3>Aug 2019 - Dec 2019</h3>
+        </div>
+        <p>Built and refined React UI components, utilizing Storybook for isolated development and testing.</p>
+        <ul>
+            <li>React, Typescript, Jest, Node.Js, Knex and Storybook.</li>
+        </ul>
+    </div>
+    <div class="list-item">
+        <div class="list-item-info">
+            <h3>Frontend Web Developer, AATI</h3>
+            <h3>Jul 2018 - Jul 2019</h3>
+        </div>
+        <p>Developed and maintained a custom internal CRM with React for the owner to organize contacts to boost operations.</p>
+        <ul>
+            <li>CRM bootstrapped using create-react-app.</li>
+            <li>Successfully implemented email notifications to send invoices to customers using Stripe API.</li>
+            <li>Enabled a feature that allowed email marketing for upcoming destinations using Twilio SendGrid</li>
+        </ul>
+    </div>
+</div>
+
+// <div class="section">
+//     <h2 class="section-title">SKILLS</h2>
+//     <p>Languages: [List languages separated by comma]</p>
+//     <p>Technologies: [List technologies separated by comma]</p>
+// </div>
+
+// <div class="section">
+//     <h2 class="section-title">EDUCATION</h2>
+//     <div class="list-item">
+//         <div class="list-item-info">
+//             <h3>BAT, Cloud Computing, Northwest Vista College</h3>
+//             <h3>Aug 2024 - Current</h3>
+//         </div>
+//         <ul>
+//             <li>Other school awards like Dean's List, scholarships, community awards, etc.</li>
+//             <li>Relevant Coursework: Advanced Class A, Advanced Class B, Advanced Class C</li>
+//         </ul>
+//     </div>
+//     <div class="list-item">
+//         <div class="list-item-info">
+//             <h3>Bootcamp, Fullstack Web  Development, Devmountain</h3>
+//             <h3>Apr 2019</h3>
+//         </div>
+//         <ul>
+//             <li>Earned a badge certificate in Immersive Web Development.</li>
+//         </ul>
+//     </div>
+// </div>
+
+// <div class="section">
+//     <h2 class="section-title">PROJECTS</h2>
+//     <div class="list-item">
+//         <div class="list-item-info">
+//             <h3>Role, Project Name (myproject.com)</h3>
+//             <h3>MMM YYYY - MMM YYYY</h3>
+//         </div>
+//         <ul>
+//             <li>State your achievements in this project in this format: "[Action verb] + what you did + reason, outcome or quantified results".</li>
+//             <li>Talk about technologies used.</li>
+//         </ul>
+//     </div>
+//     <div class="list-item">
+//         <div class="list-item-info">
+//             <h3>Role, Project Name (github.com/my-project)</h3>
+//             <h3>MMM YYYY - MMM YYYY</h3>
+//         </div>
+//         <ul>
+//             <li>State your achievements in this project in this format: "[Action verb] + what you did + reason, outcome or quantified results".</li>
+//             <li>Talk about technologies used.</li>
+//         </ul>
+//     </div>
+// </div>
+
+
+</body>
+}

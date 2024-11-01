@@ -1,0 +1,23 @@
+package views
+
+import "context"
+
+func NameFromContext(ctx context.Context) string {
+    if name, ok := ctx.Value("name").(string); ok && name !="" {
+        return name
+    }
+
+    return "World"
+}
+templ Hello(name string) {
+
+    <div>
+        <h1>Hello, {name}!</h1>
+    </div>    
+}
+ 
+// templ NotFound() {
+//     <div>
+//         <h1>404 Not Found</h1>
+//     </div>
+// } 

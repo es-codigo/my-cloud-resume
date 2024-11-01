@@ -1,0 +1,243 @@
+package views
+
+
+import "strconv"
+
+templ Console(pageViews int) {
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cloud Resume</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        /* Sidebar styles */
+        .sidebar {
+            // width: 250px;
+            background-color: white;
+            padding: 1rem;
+            // display: flex;
+            // flex-direction: row;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .avatar {
+            width: 2rem;
+            height: 2rem;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            color: #374151;
+            text-decoration: none;
+            border-radius: 0.375rem;
+        }
+        .nav-item:hover {
+            background-color: #f3f4f6;
+        }
+        .nav-item span {
+            margin-right: 0.5rem;
+        }
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+        .header-icons > * {
+            margin-left: 1rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            margin-bottom: 1rem;
+        }
+        .card-header {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .card-content {
+            padding: 1rem;
+        }
+        .quick-access {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+        .quick-access-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 6rem;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+        .quick-access-item:hover {
+            background-color: #f3f4f6;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .skill-tag {
+            background-color: #f3f4f6;
+            color: #374151;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+        .projects {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="avatar">W</div>
+                <span class="font-semibold">William Young</span>
+            </div>
+            <nav>
+                // <a href="#" class="nav-item"><span>📊</span>Dashboard</a>
+                <a href="#experience" class="nav-item"><span>💼</span>Experience</a>
+                <a href="#education" class="nav-item"><span>📚</span>Education</a>
+                <a href="#skills" class="nav-item"><span>🧑‍💻</span>Skills</a>
+                <a href="#projects" class="nav-item"><span>🏆</span>Projects</a>
+                <a href="/hobbies" class="nav-item"><span>🌟</span>Hobbies</a>
+                <a href="#" class="nav-item"><span>📞</span>Contact</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Welcome!</h1>
+                // <div class="header-icons">
+                //     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                //     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+                //     <div class="avatar">W</div>
+                // </div>
+            </header>
+            <section class="card">
+                <div class="card-header">
+                    <h2>William Young</h2>
+                        <p hx-post="">Views: {strconv.Itoa(pageViews)}</p>
+                        <p>San Antonio, Texas, US | +1 (708) 739-9561 | will.young_@outlook.com</p>
+                        <p><a href="https://www.github.com/es-codigo">github.com/es-codigo</a> | <a href="https://www.linkedin.com/in/will-young-sre">linkedin.com/in/will-young-sre</a> | johndoe.com</p>
+                </div>
+                <div id="experience" class="card-content">
+                    @Resume()
+                </div>
+            </section>
+            <section id="education" class="card">
+                <div class="card-header">
+                    <h2>Education</h2>
+                </div>
+                <div class="card-content">
+                    @Education()
+                </div>
+            </section>
+            <section id="skills" class="card">
+                <div class="card-header">
+                    <h2>Technologies I work with</h2>
+                </div>
+                <div class="card-content">
+                    <p>Experienced in cloud technologies and modern web development.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">Helm</span>
+                        <span class="skill-tag">Sys Admin</span>
+                        <span class="skill-tag">Golang</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="card">
+                <div class="card-header">
+                    <h2>Featured Projects</h2>
+                </div>
+                <div class="card-content">
+                    <div class="projects">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Cloud-native App</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Developed a scalable, microservices-based application using Kubernetes and Docker.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Serverless API</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>Built a high-performance API using AWS Lambda and API Gateway.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        // Add mobile menu functionality here if needed
+        // For example, you could add a button to toggle the sidebar on mobile
+    </script>
+</body>
+}
+
