@@ -37,21 +37,20 @@ func Server() {
 
 	app := fiber.New()
 
-	// need to create a counter that increments with each view
-
-	// app.Get("/", func(c *fiber.Ctx) error {
-	// 	db.IncrementPageViews()
-	// 	return Render(c, views.LandingPage(db.GetPageViews()))
-	// })
 	app.Get("/", func(c *fiber.Ctx) error {
 		db.IncrementPageViews()
-		return Render(c, views.Console(db.GetPageViews()))
+		return Render(c, views.Console(views.Resume(db.GetPageViews())))
+	})
+
+	app.Get("/contact", func(c *fiber.Ctx) error {
+		return Render(c, views.Console(views.ContactPage()))
 	})
 
 	app.Use(NotFoundMiddleware)
 
 	listenAddr := os.Getenv("LISTEN_ADDR")
 
+	slog.Info("HTTP server listening on", "listenAddr", listenAddr)
 	app.Listen(listenAddr)
 }
 

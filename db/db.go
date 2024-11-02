@@ -3,7 +3,7 @@ package db
 // pageViews int
 
 type DB struct {
-	PageViews int
+	PageViews int `json:"pageViews" xml:"pageViews" form:"pageViews"`
 }
 
 // a function that returns pageViews
