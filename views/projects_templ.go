@@ -8,7 +8,7 @@ package views
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func LandingPage(PageViews int) templ.Component {
+func Projects() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -29,15 +29,7 @@ func LandingPage(PageViews int) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div><h1>Welcome to the landing page</h1><p>This is the landing page of the application</p></div><div>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = Resume(PageViews).Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"projects\"><div class=\"card\"><div class=\"card-header\"><h3>Cloud-native App</h3></div><div class=\"card-content\"><p>Developed a scalable, microservices-based application using Kubernetes and Docker.</p></div></div><div class=\"card\"><div class=\"card-header\"><h3>Serverless API</h3></div><div class=\"card-content\"><p>Built a high-performance API using AWS Lambda and API Gateway.</p></div></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

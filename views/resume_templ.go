@@ -8,7 +8,9 @@ package views
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func Resume() templ.Component {
+import "strconv"
+
+func Resume(PageViews int) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -29,7 +31,52 @@ func Resume() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<head><script src=\"https://unpkg.com/htmx.org@2.0.3\" integrity=\"sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq\" crossorigin=\"anonymous\"></script><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Resume</title><style>\n        body {\n            font-family: 'Arial', sans-serif;\n            margin: 20px;\n            line-height: 1.6;\n        }\n\n        .header {\n            /* text-align: center;/ */\n            margin-bottom: 20px;\n        }\n\n        .section {\n            margin-bottom: 20px;\n        }\n\n        .section-title {\n            font-weight: bold;\n            margin-bottom: 10px;\n        }\n\n        .list-item {\n            margin-bottom: 1rem;\n        }\n\n        .list-item-info {\n            display: flex;\n            justify-content: space-between;\n        }\n    </style></head><body><div class=\"section\"><h2 class=\"section-title\">PROFESSIONAL SUMMARY</h2><p>A professional summary stating your best-selling points based on the job description e.g. I am a Software Engineer with strong fundamentals in XXX looking to XXXX.</p></div><div class=\"section\"><h2 class=\"section-title\">WORK EXPERIENCE</h2><div class=\"list-item\"><div class=\"list-item-info\"><h3>Engineer I, American Express</h3><h3>Sep 2019 - Current</h3></div><ul><li>State your achievements at your role in this format: \"[Action verb] + what you did + reason, outcome or quantified results\".</li><li>Talk about technologies used.</li></ul></div><div class=\"list-item\"><div class=\"list-item-info\"><h3>Software Engineer, Polco</h3><h3>Aug 2019 - Dec 2019</h3></div><p>Built and refined React UI components, utilizing Storybook for isolated development and testing.</p><ul><li>React, Typescript, Jest, Node.Js, Knex and Storybook.</li></ul></div><div class=\"list-item\"><div class=\"list-item-info\"><h3>Frontend Web Developer, AATI</h3><h3>Jul 2018 - Jul 2019</h3></div><p>Developed and maintained a custom internal CRM with React for the owner to organize contacts to boost operations.</p><ul><li>CRM bootstrapped using create-react-app.</li><li>Successfully implemented email notifications to send invoices to customers using Stripe API.</li><li>Enabled a feature that allowed email marketing for upcoming destinations using Twilio SendGrid</li></ul></div></div></body>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"card\"><div class=\"card-header\"><h2>WILLIAM YOUNG</h2><p hx-post=\"\">Views: ")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var2 string
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(strconv.Itoa(PageViews))
+		if templ_7745c5c3_Err != nil {
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/resume.templ`, Line: 9, Col: 61}
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div><div id=\"experience\" class=\"card-content\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = Experience().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"education\" class=\"card\"><div class=\"card-header\"><h2>Education</h2></div><div class=\"card-content\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = Education().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"skills\" class=\"card\"><div class=\"card-header\"><h2>Technologies I work with</h2></div><div class=\"card-content\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = Skills().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"projects\" class=\"card\"><div class=\"card-header\"><h2>Featured Projects</h2></div><div class=\"card-content\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = Projects().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

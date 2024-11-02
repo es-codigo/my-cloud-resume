@@ -1,12 +1,12 @@
 package views
 
 
-templ LandingPage(pageViews int) {
+templ LandingPage(PageViews int) {
     <div>
         <h1>Welcome to the landing page</h1>
         <p>This is the landing page of the application</p>
     </div>
     <div>
-    @Resume()
+    @Resume(PageViews)
     </div>
 }
