@@ -44,6 +44,11 @@ templ Styles() {
             align-items: center;
         }
         
+        .logo {
+            max-width:150px;
+            height: auto;
+        }
+
         .avatar {
             width: 2rem;
             height: 2rem;
@@ -161,7 +166,24 @@ templ Styles() {
         /* Responsive design */
         @media (max-width: 768px) {
             .navbar {
+                flex-direction: column;
+                padding: 0.5rem;
+            }
+            .nav-items {
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+            .nav-item {
+                padding: 0.5rem 1rem;
+            }
+            .header-icons {
                 display: none;
+            }
+            .quick-access {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+            .quick-access-item {
+                height: 4rem;
             }
         }
     </style>
