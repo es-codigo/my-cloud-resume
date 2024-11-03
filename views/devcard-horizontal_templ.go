@@ -8,7 +8,7 @@ package views
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func Navbar() templ.Component {
+func DevCardHZ() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -29,7 +29,7 @@ func Navbar() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<nav class=\"navbar\"><div class=\"navbar-header\"><a href=\"/\"><img src=\"https://storage.googleapis.com/my-cloud-resume-images/logo.png\" alt=\"William Young\" class=\"logo\"></a></div><nav class=\"nav-items\"><a href=\"/#experience\" class=\"nav-item\"><span>💼</span>Experience</a> <a href=\"/#education\" class=\"nav-item\"><span>📚</span>Education</a> <a href=\"/#skills\" class=\"nav-item\"><span>🧑\u200d💻</span>Skills</a> <a href=\"/#projects\" class=\"nav-item\"><span>🏆</span>Projects</a> <a href=\"/contact\" class=\"nav-item\"><span>📞</span>Contact</a></nav></nav>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"card\"><div class=\"card-content\"><a href=\"https://app.daily.dev/escobardwill\"><img src=\"https://api.daily.dev/devcards/v2/i3Uofd7tdUFrzHfMRQhoS.png?type=wide&amp;r=3k4\" alt=\"Will Young&#39;s Dev Card\"></a></div></section>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -2,11 +2,11 @@ package views
 
 import "strconv"
 
-templ Resume(PageViews int) {
+templ Resume(PageViews int64) {
     <section class="card">
         <div class="card-header">
             <h2>WILLIAM YOUNG</h2>
-                <p hx-post="">Views: {strconv.Itoa(PageViews)}</p>
+                <p hx-post="">Views: {strconv.FormatInt(PageViews, 10)}</p>
         </div>
         <div id="experience" class="card-content">
             @Experience()
