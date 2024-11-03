@@ -2,7 +2,7 @@ package server
 
 import (
 	"log/slog"
-	"my-cloud-resume/db"
+	"my-cloud-resume/fstore"
 	"my-cloud-resume/views"
 	"os"
 
@@ -11,26 +11,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// Creating a simple gofiber server
-
-// type database struct {
-// 	pageViews int
-// }
-
-// func (d *database) GetPageViews() int {
-// 	return d.pageViews
-// }
-
-// // a function that increments pageViews
-// func (d *database) IncrementPageViews() {
-// 	d.pageViews++
-// }
-
 func Server() {
-	db := &db.DB{
-		PageViews: 0,
-	}
-
 	if err := godotenv.Load(); err != nil {
 		slog.Error("Error loading .env file", "error", err)
 	}
@@ -38,8 +19,9 @@ func Server() {
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		db.IncrementPageViews()
-		return Render(c, views.Console(views.Resume(db.GetPageViews())))
+		pageViews := fstore.GetPageViews()
+		fstore.IncrementPageViews(pageViews)
+		return Render(c, views.Console(views.Resume(pageViews)))
 	})
 
 	app.Get("/contact", func(c *fiber.Ctx) error {
