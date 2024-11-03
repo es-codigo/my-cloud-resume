@@ -28,6 +28,10 @@ func Server() {
 		return Render(c, views.Console(views.ContactPage()))
 	})
 
+	app.Get("/about", func(c *fiber.Ctx) error {
+		return Render(c, views.Console(views.About()))
+	})
+
 	app.Use(NotFoundMiddleware)
 
 	listenAddr := os.Getenv("LISTEN_ADDR")
@@ -38,7 +42,7 @@ func Server() {
 
 func NotFoundMiddleware(c *fiber.Ctx) error {
 	c.Status(fiber.StatusNotFound)
-	return Render(c, views.NotFound())
+	return Render(c, views.Console(views.NotFound()))
 }
 
 func Render(c *fiber.Ctx, component templ.Component) error {
