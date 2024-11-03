@@ -5,8 +5,14 @@ import "strconv"
 templ Resume(PageViews int64) {
     <section class="card">
         <div class="card-header">
-            <h2>WILLIAM YOUNG</h2>
-                <p hx-post="">Views: {strconv.FormatInt(PageViews, 10)}</p>
+            <h1>WILLIAM YOUNG</h1>
+            <div class="resume-tag">
+            <h3>engineer@willyoung.cloud</h3>
+            <p>|</p>
+            <h3>7087399561</h3>
+            </div>
+            <h3>Site Reliability Engineer</h3>
+                <p hx-post="">Visitors: {strconv.FormatInt(PageViews, 10)}</p>
         </div>
         <div id="experience" class="card-content">
             @Experience()
@@ -22,7 +28,7 @@ templ Resume(PageViews int64) {
     </section>
     <section id="skills" class="card">
         <div class="card-header">
-            <h2>Technologies I work with</h2>
+            <h2>Skills</h2>
         </div>
         <div class="card-content">
             @Skills()

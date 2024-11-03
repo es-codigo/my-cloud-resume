@@ -1,7 +1,96 @@
 package views
 
+import "my-cloud-resume/views/skills"
+
 
 templ Skills() {
+    <h3>Programming Languages & Tools</h3>
+        <div class="skill-badges">
+            <div class="badge">
+            @skills.GoSVG()
+            </div>   
+            <div class="badge">
+            @skills.BashSVG()
+            </div>   
+            <div class="badge">
+            @skills.JSSVG()
+            </div>   
+            <div class="badge">
+            @skills.HTMLSVG()
+            </div>   
+            <div class="badge">
+            @skills.CSSSVG()
+            </div>   
+            <div class="badge">
+            @skills.DockerSVG()
+            </div>   
+            <div class="badge">
+            @skills.PostgresSVG()
+            </div>   
+        </div>
+    <h3>Cloud Technologies</h3>
+        <div class="skill-badges">
+            <div class="badge">
+            @skills.AWSSVG()
+            </div>   
+            <div class="badge">
+            @skills.GCPSVG()
+            </div>   
+            <div class="badge">
+            @skills.AzureSVG()
+            </div>
+            <div class="badge">
+            @skills.KubernetesSVG()
+            </div>
+            <div class="badge">
+            @skills.TerraformSVG()
+            </div>
+            <div class="badge">
+            @skills.EnvoySVG()
+            </div>
+        </div>
+    <h3>Observability & Logging Tools</h3>
+        <div class="skill-badges">
+            <div class="badge">
+            @skills.PrometheusSVG()
+            </div>   
+            <div class="badge">
+            @skills.GrafanaSVG()
+            </div>   
+            <div class="badge">
+            @skills.SplunkSVG()
+            </div>
+            <div class="badge">
+            @skills.ElastSVG()
+            </div>
+            <div class="badge">
+            @skills.JaegerSVG()
+            </div>
+        </div>
+    <h3>CI/CD Tools & Automation</h3>
+        <div class="skill-badges">
+            <div class="badge">
+            @skills.GithubSVG()
+            </div>   
+            <div class="badge">
+            @skills.AnsibleSVG()
+            </div>   
+            <div class="badge">
+            @skills.JenkinsSVG()
+            </div>
+        </div>
+    <h3>Operating Systems</h3>
+        <div class="skill-badges">
+            <div class="badge">
+            @skills.LinuxSVG()
+            </div>
+            <div class="badge">
+            @skills.MacOSSVG()
+            </div>   
+            <div class="badge">
+            @skills.WindowsSVG()
+            </div>   
+        </div>
     <p>Experienced in cloud technologies and modern web development.</p>
     <div class="skill-tags">
         <span class="skill-tag">AWS</span>
