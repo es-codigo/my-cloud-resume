@@ -9,6 +9,7 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import "strconv"
+import "my-cloud-resume/components/ui"
 
 func Resume(PageViews int64) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
@@ -31,14 +32,22 @@ func Resume(PageViews int64) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"card\"><div class=\"card-header\"><h1>WILLIAM YOUNG</h1><div class=\"resume-tag\"><h3>wy@willyoung.cloud</h3><p>|</p><h3>1-708-739-9561</h3></div><div class=\"resume-tag\"><h3>Site Reliability Engineer</h3><p>|</p><h3>Software Engineer</h3></div><p hx-post=\"\">Visitors: ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"card\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = ui.TitleBar().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card-header\"><h1>WILLIAM YOUNG</h1><div class=\"resume-tag\"><h3>wy@willyoung.cloud</h3><p>|</p><h3>708-739-9561</h3></div><div class=\"resume-tag\"><h3>Site Reliability Engineer</h3><p>|</p><h3>Software Engineer</h3></div><p>Visitors: ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(strconv.FormatInt(PageViews, 10))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/resume.templ`, Line: 19, Col: 73}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/views/resume.templ`, Line: 21, Col: 62}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
@@ -52,7 +61,15 @@ func Resume(PageViews int64) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"education\" class=\"card\"><div class=\"card-header\"><h2>Education</h2></div><div class=\"card-content\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"education\" class=\"card\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = ui.TitleBar().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card-header\"><h2>Education</h2></div><div class=\"card-content\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -60,7 +77,15 @@ func Resume(PageViews int64) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"skills\" class=\"card\"><div class=\"card-header\"><h2>Skills</h2></div><div class=\"card-content\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"skills\" class=\"card\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = ui.TitleBar().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card-header\"><h2>Skills</h2></div><div class=\"card-content\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -68,7 +93,15 @@ func Resume(PageViews int64) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"projects\" class=\"card\"><div class=\"card-header\"><h2>Featured Projects</h2></div><div class=\"card-content\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section><section id=\"projects\" class=\"card\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = ui.TitleBar().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card-header\"><h2>Featured Projects</h2></div><div class=\"card-content\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

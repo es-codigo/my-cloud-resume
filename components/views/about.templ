@@ -1,8 +1,13 @@
 package views
 
+import "my-cloud-resume/components/ui"
+
+
+
 templ About() {
+    <section class="card">
+    @ui.TitleBar()
     <div class="about">
-        
         <div class="about-images">
             <img src="https://storage.googleapis.com/my-cloud-resume-images/HeadshotBig.jpg" alt="William Young" class="profile-image" />
             <img src="https://storage.googleapis.com/my-cloud-resume-images/egypt.jpg" alt="William in Egypt" class="profile-image" />
@@ -30,5 +35,6 @@ templ About() {
         </ul>
         </div>
     </div>
+    </section>
 
 }

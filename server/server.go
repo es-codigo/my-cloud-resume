@@ -2,12 +2,13 @@ package server
 
 import (
 	"log/slog"
+	"my-cloud-resume/components/views"
 	"my-cloud-resume/fstore"
-	"my-cloud-resume/views"
 	"os"
 
 	"github.com/a-h/templ"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 )
 
@@ -17,6 +18,8 @@ func Server() {
 	}
 
 	app := fiber.New()
+
+	app.Use(cors.New())
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		pageViews := fstore.GetPageViews()
