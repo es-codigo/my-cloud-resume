@@ -29,7 +29,7 @@ func Education() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"section\"><div class=\"list-item\"><div class=\"list-item-info\"><h3>BAT, Cloud Computing, Northwest Vista College</h3><h3>Aug 2024 - Current</h3></div><ul><li>Other school awards like Dean's List, scholarships, community awards, etc.</li><li>Relevant Coursework: Advanced Class A, Advanced Class B, Advanced Class C</li></ul></div><div class=\"list-item\"><div class=\"list-item-info\"><h3>Bootcamp, Fullstack Web  Development, Devmountain</h3><h3>Apr 2019</h3></div><ul><li>Earned a badge certificate in Immersive Web Development.</li></ul></div></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"section\"><div class=\"list-item\"><div class=\"list-item-info\"><h3>BAT, Cloud Computing, Northwest Vista College</h3><h3>Aug 2024 - Current</h3></div></div><div class=\"list-item\"><div class=\"list-item-info\"><h3>Bootcamp, Fullstack Web  Development, Devmountain</h3><h3>Apr 2019</h3></div><ul><li>Earned a badge certificate in Immersive Web Development.</li></ul></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
