@@ -31,7 +31,7 @@ func Resume(PageViews int64) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"card\"><div class=\"card-header\"><h1>WILLIAM YOUNG</h1><div class=\"resume-tag\"><span>wy@willyoung.cloud</span><p>|</p><span>1-708-739-9561</span></div><div class=\"resume-tag\"><span>Site Reliability Engineer</span><p>|</p><span>Software Engineer</span></div><p hx-post=\"\">Visitors: ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"card\"><div class=\"card-header\"><h1>WILLIAM YOUNG</h1><div class=\"resume-tag\"><h3>wy@willyoung.cloud</h3><p>|</p><h3>1-708-739-9561</h3></div><div class=\"resume-tag\"><h3>Site Reliability Engineer</h3><p>|</p><h3>Software Engineer</h3></div><p hx-post=\"\">Visitors: ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
