@@ -7,7 +7,7 @@ import (
 	"cloud.google.com/go/firestore"
 )
 
-var collectionName = "counters/rcV7THE9u5Sb1azqZBQo"
+var collectionName = "counters/resume"
 
 func GetPageViews() int64 {
 
