@@ -1,6 +1,6 @@
 package views
 
-import "strconv"
+// import "strconv"
 import "my-cloud-resume/components/ui"
 
 templ Resume(PageViews int64) {
@@ -18,7 +18,7 @@ templ Resume(PageViews int64) {
             <p>|</p>
             <h3>Software Engineer</h3>
             </div>
-                <p>Visitors: {strconv.FormatInt(PageViews, 10)}</p>
+                // <p>Visitors: {strconv.FormatInt(PageViews, 10)}</p>
         </div>
         <div id="experience" class="card-content">
             @Experience()

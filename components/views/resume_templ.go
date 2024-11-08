@@ -8,7 +8,7 @@ package views
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "strconv"
+// import "strconv"
 import "my-cloud-resume/components/ui"
 
 func Resume(PageViews int64) templ.Component {
@@ -40,20 +40,7 @@ func Resume(PageViews int64) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card-header\"><h1>WILLIAM YOUNG</h1><div class=\"resume-tag\"><h3>wy@willyoung.cloud</h3><p>|</p><h3>708-739-9561</h3></div><div class=\"resume-tag\"><h3>Site Reliability Engineer</h3><p>|</p><h3>Software Engineer</h3></div><p>Visitors: ")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(strconv.FormatInt(PageViews, 10))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/views/resume.templ`, Line: 21, Col: 62}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div><div id=\"experience\" class=\"card-content\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card-header\"><h1>WILLIAM YOUNG</h1><div class=\"resume-tag\"><h3>wy@willyoung.cloud</h3><p>|</p><h3>708-739-9561</h3></div><div class=\"resume-tag\"><h3>Site Reliability Engineer</h3><p>|</p><h3>Software Engineer</h3></div></div><div id=\"experience\" class=\"card-content\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

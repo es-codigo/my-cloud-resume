@@ -3,7 +3,6 @@ package server
 import (
 	"log/slog"
 	"my-cloud-resume/components/views"
-	"my-cloud-resume/fstore"
 	"os"
 
 	"github.com/a-h/templ"
@@ -22,9 +21,10 @@ func Server() {
 	app.Use(cors.New())
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		pageViews := fstore.GetPageViews()
-		fstore.IncrementPageViews(pageViews)
-		return Render(c, views.Console(views.Resume(pageViews)))
+		// pageViews := fstore.GetPageViews()
+		// fstore.IncrementPageViews(pageViews)
+
+		return Render(c, views.Console(views.Resume(0)))
 	})
 
 	app.Get("/contact", func(c *fiber.Ctx) error {
