@@ -3,6 +3,7 @@ package server
 import (
 	"log/slog"
 	"my-cloud-resume/components/views"
+	"my-cloud-resume/db"
 	"os"
 
 	"github.com/a-h/templ"
@@ -16,15 +17,20 @@ func Server() {
 		slog.Error("Error loading .env file", "error", err)
 	}
 
+	client, err := db.GetClient()
+	if err != nil {
+		slog.Error("Error getting client", "error", err)
+	}
+
 	app := fiber.New()
 
 	app.Use(cors.New())
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		// pageViews := fstore.GetPageViews()
-		// fstore.IncrementPageViews(pageViews)
+		pageViews := db.GetPageViews(client)
+		db.IncrementPageViews(client, pageViews)
 
-		return Render(c, views.Console(views.Resume(0)))
+		return Render(c, views.Console(views.Resume(pageViews)))
 	})
 
 	app.Get("/contact", func(c *fiber.Ctx) error {

@@ -2,8 +2,9 @@ package views
 
 // import "strconv"
 import "my-cloud-resume/components/ui"
+import "strconv"
 
-templ Resume(PageViews int64) {
+templ Resume(PageViews int) {
     <section class="card">
         @ui.TitleBar()
         <div class="card-header">
@@ -18,7 +19,7 @@ templ Resume(PageViews int64) {
             <p>|</p>
             <h3>Software Engineer</h3>
             </div>
-                // <p>Visitors: {strconv.FormatInt(PageViews, 10)}</p>
+                <p>Visitors: {strconv.Itoa(PageViews)}</p>
         </div>
         <div id="experience" class="card-content">
             @Experience()
