@@ -1,20 +1,18 @@
 package db_test
 
 import (
-	"log/slog"
 	"my-cloud-resume/db"
 	"os"
 	"reflect"
 	"testing"
-
-	"github.com/joho/godotenv"
+	// "github.com/joho/godotenv"
 )
 
 func TestGetPageViews(t *testing.T) {
 
-	if err := godotenv.Load(); err != nil {
-		slog.Error("Error loading .env file", "error", err)
-	}
+	// if err := godotenv.Load(); err != nil {
+	// 	slog.Error("Error loading .env file", "error", err)
+	// }
 
 	API_URL := os.Getenv("API_URL")
 	API_KEY := os.Getenv("API_KEY")
@@ -33,9 +31,9 @@ func TestGetPageViews(t *testing.T) {
 
 func TestIncrementPageViews(t *testing.T) {
 
-	if err := godotenv.Load(); err != nil {
-		slog.Error("Error loading .env file", "error", err)
-	}
+	// if err := godotenv.Load(); err != nil {
+	// 	slog.Error("Error loading .env file", "error", err)
+	// }
 
 	API_URL := os.Getenv("API_URL")
 	API_KEY := os.Getenv("API_KEY")
