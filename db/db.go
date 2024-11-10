@@ -12,7 +12,14 @@ type Counter struct {
 	PageViews int `json:"pageViews"`
 }
 
-func GetClient(API_URL string, API_KEY string) (*supabase.Client, error) {
+
+func GetClient() (*supabase.Client, error) {
+	if err := godotenv.Load(); err != nil {
+		slog.Error("Error loading .env file", "error", err)
+	}
+	API_URL := os.Getenv("API_URL")
+	API_KEY := os.Getenv("API_KEY")
+
 
 	client, err := supabase.NewClient(API_URL, API_KEY, &supabase.ClientOptions{})
 	if err != nil {
