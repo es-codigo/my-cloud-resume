@@ -12,10 +12,6 @@ import (
 
 func TestGetPageViews(t *testing.T) {
 
-	if err := godotenv.Load(); err != nil {
-		slog.Error("Error loading .env file", "error", err)
-	}
-
 	API_URL := os.Getenv("API_URL")
 	API_KEY := os.Getenv("API_KEY")
 
