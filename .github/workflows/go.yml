@@ -25,4 +25,4 @@ jobs:
       run: go build -o main main.go
 
     - name: Test
-      run: go test db/db_test.go -v
+      run: go test -v ./...
