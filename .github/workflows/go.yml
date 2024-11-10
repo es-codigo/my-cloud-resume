@@ -25,4 +25,8 @@ jobs:
       run: go build -o main main.go
 
     - name: Test
+      env:
+        API_URL: ${{ secrets.API_URL }}
+        API_KEY: ${{ secrets.API_KEY }}
+        LISTEN_ADDR: ${{ secrets.LISTEN_ADDR }}
       run: go test -v ./...
