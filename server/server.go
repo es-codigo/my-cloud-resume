@@ -13,11 +13,15 @@ import (
 )
 
 func Server() {
+
 	if err := godotenv.Load(); err != nil {
 		slog.Error("Error loading .env file", "error", err)
 	}
 
-	client, err := db.GetClient()
+	API_URL := os.Getenv("API_URL")
+	API_KEY := os.Getenv("API_KEY")
+
+	client, err := db.GetClient(API_URL, API_KEY)
 	if err != nil {
 		slog.Error("Error getting client", "error", err)
 	}
