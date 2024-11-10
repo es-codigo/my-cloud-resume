@@ -3,7 +3,6 @@ package db
 import (
 	"encoding/json"
 	"log/slog"
-	"os"
 	"strconv"
 
 	"github.com/supabase-community/supabase-go"
@@ -13,9 +12,7 @@ type Counter struct {
 	PageViews int `json:"pageViews"`
 }
 
-func GetClient() (*supabase.Client, error) {
-	API_URL := os.Getenv("API_URL")
-	API_KEY := os.Getenv("API_KEY")
+func GetClient(API_URL string, API_KEY string) (*supabase.Client, error) {
 
 	client, err := supabase.NewClient(API_URL, API_KEY, &supabase.ClientOptions{})
 	if err != nil {
