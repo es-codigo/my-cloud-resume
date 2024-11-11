@@ -41,14 +41,14 @@ func Resume(PageViews int) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"card-header\"><h1>GUILLERMO DEL TORO</h1><div class=\"resume-tag\"><h3>willy@willyoung.cloudy</h3><p>|</p><h3>708-739-9561</h3></div><div class=\"resume-tag\"><h3>Site Reliability Engineer</h3><p>|</p><h3>Software Engineer</h3></div><p>Visitors: ")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"card-header\" class=\"card-header\"><h1>WILLIAM YOUNG</h1><div class=\"resume-tag\"><div class=\"resume-tagline\"><h3>wy@willyoung.cloud</h3><h2>|</h2><h3>708-739-9561</h3></div><div class=\"resume-tagline\"><h3>SRE</h3><h2>|</h2><h3>SWE</h3></div></div><p>Visitors: ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(strconv.Itoa(PageViews))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/views/resume.templ`, Line: 22, Col: 53}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/views/resume.templ`, Line: 24, Col: 53}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {

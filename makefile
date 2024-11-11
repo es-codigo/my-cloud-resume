@@ -5,7 +5,10 @@
 # 	@go build -o bin/app main.go
 
 run: templ
-	@go run .
+	@air
+
+# go: templ
+# 	@go run .
 
 
 templ:
