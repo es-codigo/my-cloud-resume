@@ -223,7 +223,7 @@ func Skills() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><p>Experienced in cloud technologies and modern web development.</p><div class=\"skill-tags\"><span class=\"skill-tag\">AWS</span> <span class=\"skill-tag\">Google Cloud</span> <span class=\"skill-tag\">Azure</span> <span class=\"skill-tag\">Docker</span> <span class=\"skill-tag\">Kubernetes</span> <span class=\"skill-tag\">Terraform</span> <span class=\"skill-tag\">Helm</span> <span class=\"skill-tag\">Sys Admin</span> <span class=\"skill-tag\">Golang</span> <span class=\"skill-tag\">Bash</span> <span class=\"skill-tag\">JavaScript</span> <span class=\"skill-tag\">React</span> <span class=\"skill-tag\">SQL</span></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

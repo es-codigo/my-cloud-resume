@@ -7,17 +7,19 @@ import "strconv"
 templ Resume(PageViews int) {
     <section class="card">
         @ui.TitleBar()
-        <div class="card-header">
-            <h1>GUILLERMO DEL TORO</h1>
+        <div id="card-header" class="card-header">
+            <h1>WILLIAM YOUNG</h1>
             <div class="resume-tag">
-            <h3>willy@willyoung.cloudy</h3>
-            <p>|</p>
+            <div class="resume-tagline">
+            <h3>wy@willyoung.cloud</h3>
+            <h2>|</h2>
             <h3>708-739-9561</h3>
             </div>
-            <div class="resume-tag">
-            <h3>Site Reliability Engineer</h3>
-            <p>|</p>
-            <h3>Software Engineer</h3>
+            <div class="resume-tagline">
+            <h3>SRE</h3>
+            <h2>|</h2>
+            <h3>SWE</h3>
+            </div>
             </div>
                 <p>Visitors: {strconv.Itoa(PageViews)}</p>
         </div>
