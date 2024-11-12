@@ -2,3 +2,4 @@
 **/.env
 **/.tsx
 fly.toml
+architecture/
