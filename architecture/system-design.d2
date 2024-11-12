@@ -1,0 +1,35 @@
+# Diagram for My Cloud Resume
+# 
+
+
+
+My-Cloud-Resume: {
+    server: {
+        Go/Templ
+    }
+    client: {
+        HTML/CSS
+    }
+
+
+    server -> client : serves HTML and CSS files
+}
+
+DB: {
+    Supabase: {
+        Postgres
+    }
+}
+My-Cloud-Resume.server <-> DB : reads and updates pageView count 
+
+CI/CD: {
+    Github Actions
+}
+
+Hosting: {
+    Fly-io
+}
+
+My-Cloud-Resume -> CI/CD : pull requests: run tests
+
+CI/CD -> Hosting : on push to main: build and deploy My-Cloud-Resume
