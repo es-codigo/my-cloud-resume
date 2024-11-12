@@ -12,3 +12,4 @@ This project is a solution to the Cloud Resume Challenge. It features a resume/p
 
 ## Architecture
 
+![sd](https://github.com/user-attachments/assets/1d1942ab-03cd-4c31-984f-4be73ee5f104)
