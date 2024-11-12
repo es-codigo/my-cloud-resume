@@ -1,6 +1,7 @@
 # My Cloud Resume Challenge
 
 This project is a solution to the Cloud Resume Challenge. It features a resume/portfolio website built with a modern technology stack and deployed on a cloud platform with robust CI/CD and monitoring capabilities.
+View [my-cloud-resume](https://willyoung.cloud)
 
 ## Features
 
